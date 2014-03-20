@@ -47,7 +47,7 @@ TEAM_POLICE = AddExtraTeam("Survival Protection", {
 		Type /wanted <name> to alert the public to this criminal
 		OR go to tab and warrant someone by clicking the warrant button
 		!!You also hunt down the Runners!!]],
-	weapons = {"arrest_stick", "unarrest_stick", "m9k_colt1911", "m9k_mossberg590", "stunstick", "door_ram", "weaponchecker"},
+	weapons = {"arrest_stick", "unarrest_stick", "m9k_colt1911", "stunstick", "door_ram", "weaponchecker"},
 	command = "cp",
 	max = 6,
 	salary = 65,
@@ -173,7 +173,7 @@ TEAM_CHIEF = AddExtraTeam("Survival Protection Chief", {
 		Type /wanted <name> to alert the public to this criminal
 		Type /jailpos to set the Jail Position
 		!!You also hunt down the Runners!!]],
-	weapons = {"arrest_stick", "unarrest_stick", "m9k_coltpython", "stunstick", "door_ram", "weaponchecker"},
+	weapons = {"arrest_stick", "unarrest_stick", "m9k_coltpython", "m9k_mossberg590", "stunstick", "door_ram", "weaponchecker"},
 	command = "chief",
 	max = 1,
 	salary = 75,
@@ -237,6 +237,23 @@ TEAM_HOBO = AddExtraTeam("Hobo", {
 		outside someone else's door]],
 	weapons = {"weapon_bugbait"},
 	command = "hobo",
+	max = 5,
+	salary = 0,
+	admin = 0,
+	vote = false,
+	hasLicense = false,
+	candemote = false,
+	hobo = true,
+	mayorCanSetSalary = false
+})
+
+TEAM_INFECTED = AddExtraTeam("Infected", {
+	color = Color(80, 45, 0, 255),
+	model = "models/Zombie/Classic.mdl",
+	description = [[Your a zombie, as human call them, you are
+		allowed to kill people as this job, but you are KOS]],
+	weapons = {"fas2_dv2"},
+	command = "infected",
 	max = 5,
 	salary = 0,
 	admin = 0,
@@ -465,8 +482,31 @@ TEAM_SWATEXPLOSIVE = AddExtraTeam("Military Explosives Expert", {
 		Type /wanted <name> to alert the public to this criminal
 		Type /jailpos to set the Jail Position
 		!!You also hunt down the Runners!!]],
-	weapons = {"arrest_stick", "unarrest_stick", "m9k_colt1911", "stunstick", "weaponchecker", "m9k_bizonp19", "weapon_slam"},
+	weapons = {"arrest_stick", "unarrest_stick", "fas2_pp19", "stunstick", "weaponchecker", "fas2_glock20", "weapon_slam"},
 	command = "swatexplosive",
+	max = 5,
+	salary = 120,
+	admin = 0,
+	vote = false,
+	hasLicense = true,
+	candemote = true,
+	police = true,
+	mayorCanSetSalary = false,
+    customCheck = function(ply)
+    return ply:GetUserGroup() == "donator" or ply:IsAdmin()
+    end    
+})
+
+TEAM_SWATPILOT = AddExtraTeam("Military Pilot", {
+	color = Color(19, 81, 124, 255),
+	model = "models/player/swat.mdl",
+	description = [[The Military is a very special team.
+	    As Pilot your the person that helps raids with evac's.
+		Type /wanted <name> to alert the public to this criminal
+		Type /jailpos to set the Jail Position
+		!!You also hunt down the Runners!!]],
+	weapons = {"arrest_stick", "unarrest_stick", "parachuter", "stunstick", "weaponchecker", "fas2_m4a1"},
+	command = "swatpilot",
 	max = 5,
 	salary = 120,
 	admin = 0,
