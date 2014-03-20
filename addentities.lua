@@ -294,4 +294,31 @@ AddEntity("40MM HE Turret (Grenade)", {
 	allowed = TEAM_ENGINEER
 })
 
+AddEntity("OH-23G Raven", {
+	ent = "wac_hc_raven_oh23",
+	model = "models/props_lab/monitor01a.mdl",
+	price = 0,
+	max = 1,
+	cmd = "/ravenheli",
+	allowed = TEAM_SWATPILOT
+})
+
+AddEntity("Little Bird MH6", {
+	ent = "wac_hc_littlebird_mh6",
+	model = "models/props_lab/monitor01a.mdl",
+	price = 0,
+	max = 1,
+	cmd = "/littlebird",
+	allowed = TEAM_SWATPILOT
+})
+
+AddEntity("Little Bird AH6", {
+	ent = "wac_hc_littlebird_ah6",
+	model = "models/props_lab/monitor01a.mdl",
+	price = 50000,
+	max = 1,
+	cmd = "/gunnedheli",
+	allowed = TEAM_SWATPILOT
+})
+
 AddCustomVehicle("Jeep", "models/buggy.mdl", 200, {TEAM_ENGINEER})
