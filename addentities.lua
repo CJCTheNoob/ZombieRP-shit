@@ -321,4 +321,13 @@ AddEntity("Little Bird AH6", {
 	allowed = TEAM_SWATPILOT
 })
 
+AddEntity("Maintenance Station", {
+	ent = "wac_aircraft_maintenance",
+	model = "models/props_lab/reciever01b.mdl",
+	price = 1000,
+	max = 1,
+	cmd = "/repairstation",
+	allowed = TEAM_SWATPILOT
+})
+
 AddCustomVehicle("Jeep", "models/buggy.mdl", 200, {TEAM_ENGINEER})
