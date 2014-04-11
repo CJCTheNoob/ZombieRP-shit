@@ -81,6 +81,10 @@ foodies = {
 		name = "Dos Equis", -- Print name
 		desc = "\"When it is raining, it is because he is sad.\"" -- description
 	},
+	["models/food/burger.mdl"] = { -- model
+		name = "CheeseBurger", -- Print name
+		desc = "Cheeseburga Cheeseburga Cheeseburga." -- description
+	},
 	["models/props/cs_italy/orange.mdl"] = { -- model
 		name = "Orange", -- Print name
 		desc = "An Orange a day keep der fuhror away." -- description
