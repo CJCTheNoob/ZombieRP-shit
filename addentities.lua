@@ -189,9 +189,6 @@ AddEntity("Constant Ruby Money Printer", {
 	price = 7000,
 	max = 2,
 	cmd = "/buyrubymoneyprinter",
-    customCheck = function(ply)
-    return ply:GetUserGroup() == "donator" or ply:IsAdmin()
-    end
 })
 
 AddEntity("Constant Golden Money Printer", {
@@ -200,10 +197,6 @@ AddEntity("Constant Golden Money Printer", {
 	price = 10000,
 	max = 2,
 	cmd = "/buygoldenmoneyprinter",
-    customCheck = function(ply)
-    return ply:GetUserGroup() == "donator" or ply:IsAdmin()
-    end
-
 })
 
 AddEntity("Constant Nuclear Money Printer", {
@@ -261,9 +254,6 @@ AddEntity("Diamond Money Printer", {
 	price = 100000,
 	max = 4,
 	cmd = "/diamondmp",
-	customCheck = function(ply)
-    return ply:GetUserGroup() == "donator" or ply:IsAdmin()
-    end
 })
 
 AddEntity("Copper Money Printer", {
