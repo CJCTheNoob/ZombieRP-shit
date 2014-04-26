@@ -33,41 +33,6 @@ TEAM_CITIZEN = AddExtraTeam("Survivor", {
 	mayorCanSetSalary = true
 })
 
-TEAM_SCAVENGER = AddExtraTeam("Scavenger", {
-	color = Color(221, 151, 151),
-	model = {
-		"models/player/Group01/Female_01.mdl",
-		"models/player/Group01/Female_02.mdl",
-		"models/player/Group01/Female_03.mdl",
-		"models/player/Group01/Female_04.mdl",
-		"models/player/Group01/Female_06.mdl",
-		"models/player/group01/male_01.mdl",
-		"models/player/Group01/Male_02.mdl",
-		"models/player/Group01/male_03.mdl",
-		"models/player/Group01/Male_04.mdl",
-		"models/player/Group01/Male_05.mdl",
-		"models/player/Group01/Male_06.mdl",
-		"models/player/Group01/Male_07.mdl",
-		"models/player/Group01/Male_08.mdl",
-		"models/player/Group01/Male_09.mdl"
-	},
-	description = [[You wander around the wasteland, your like
-		a normal survivor, but you get some guns to survive.]],
-	weapons = {"fas2_m1911", "fas2_m14"},
-	command = "scavenger",
-	max = 3,
-	salary = 1,
-	admin = 0,
-	vote = false,
-	hasLicense = false,
-	candemote = false,
-	scavenger = true,
-	mayorCanSetSalary = true,
-	customCheck = function(ply)
-    return ply:GetUserGroup() == "Member" or "donator" or ply:IsAdmin()
-    end    
-})
-
 TEAM_POLICE = AddExtraTeam("Survival Protection", {
 	color = Color(25, 25, 170, 255),
 	model = {"models/player/police.mdl", "models/player/police_fem.mdl"},
@@ -122,10 +87,10 @@ TEAM_GANG = AddExtraTeam("Bandit", {
 	description = [[The lowest person of crime.
 		A bandit generally works for the Bandit Leader who runs the crime family.
 		The Bandit Leader sets your agenda and you follow it or you might be punished.]],
-	weapons = {"m9k_luger"},
+	weapons = {},
 	command = "gangster",
 	max = 5,
-	salary = 45,
+	salary = 1,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -140,10 +105,10 @@ TEAM_MOB = AddExtraTeam("Bandit Leader", {
 		organization.
 		He has the ability to break into houses by using a lockpick.
 		The Bandit Leader also can unarrest you.]],
-	weapons = {"lockpick", "unarrest_stick", "m9k_luger", "m9k_thompson"},
+	weapons = {"lockpick", "unarrest_stick"},
 	command = "mobboss",
 	max = 1,
-	salary = 60,
+	salary = 1,
 	admin = 0,
 	vote = false,
 	NeedToChangeFrom = TEAM_BANDIT,
@@ -166,7 +131,7 @@ TEAM_GUN = AddExtraTeam("Gundealer", {
 	weapons = {},
 	command = "gundealer",
 	max = 2,
-	salary = 45,
+	salary = 1,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -185,7 +150,7 @@ TEAM_MEDIC = AddExtraTeam("Medic", {
 	weapons = {"fas2_ifak"},
 	command = "medic",
 	max = 5,
-	salary = 45,
+	salary = 1,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -240,10 +205,10 @@ TEAM_MAYOR = AddExtraTeam("Governor", {
 	Everyone must be inside during a lockdown.
 	The cops patrol the area
 	/unlockdown to end a lockdown]],
-	weapons = {"m9k_hk45"},
+	weapons = {},
 	command = "mayor",
 	max = 1,
-	salary = 85,
+	salary = 120,
 	admin = 0,
 	vote = true,
 	hasLicense = false,
@@ -279,39 +244,6 @@ TEAM_HOBO = AddExtraTeam("Hobo", {
 	mayorCanSetSalary = false
 })
 
-//Secret Service
-TEAM_SECRETSERVICE = AddExtraTeam("Secret Service", {
-	color = Color(15, 255, 111, 255),
-	model = "models/player/barney.mdl",
-	description = [[Your a secret service, protect mayor at all costs.]],
-	weapons = {"arrest_stick", "m9k_mp7", "m9k_usp"},
-	command = "secretservice",
-	max = 2,
-	salary = 100,
-	admin = 0,
-	vote = true,
-	hasLicense = false,
-	mayorCanSetSalary = true
-})
-
-//Ninja
-TEAM_NINJA = AddExtraTeam("Ninja", {
-	color = Color(0, 10, 0, 255),
-	model = "models/nikout/dishonored/assassin1.mdl",
-	description = [[This class was a poor fighter when he was young,
-	    but then he found hes master.]],
-	weapons = {"weapon_crossbow", "climb_swep2", "fas2_dv2"},
-	command = "ninja",
-	max = 2,
-	salary = 55,
-	admin = 0,
-	vote = true,
-	hasLicense = false,
-	candemote = true,
-	Ninja = true,
-	mayorCanSetSalary = false
-})
-
 //Admin
 TEAM_ADMIN = AddExtraTeam("Admin on Duty", {
 	color = Color(38, 255, 0, 153),
@@ -320,7 +252,7 @@ TEAM_ADMIN = AddExtraTeam("Admin on Duty", {
 	weapons = {"weapon_nautilus", "fas2_dv2"},
 	command = "admin",
 	max = 64,
-	salary = 500,
+	salary = 0,
 	admin = 1,
 	vote = false,
 	hasLicense = true,
@@ -337,7 +269,7 @@ TEAM_ADMIN = AddExtraTeam("Mod on duty", {
 	weapons = {"weapon_nautilus", "fas2_dv2"},
 	command = "mod",
 	max = 64,
-	salary = 500,
+	salary = 0,
 	admin = 1,
 	vote = false,
 	hasLicense = true,
@@ -359,7 +291,7 @@ TEAM_RUNNER = AddExtraTeam("Runner", {
 	weapons = {"m9k_sig_p229r", "climb_swep2"},
 	command = "parkour",
 	max = 3,
-	salary = 40,
+	salary = 1,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -373,10 +305,10 @@ TEAM_HITMAN = AddExtraTeam("Hitman", {
 	color = Color(84, 34, 94, 255),
 	model = "models/player/guerilla.mdl",
 	description = [[A hitman gets payed to kill people.]],
-	weapons = {"m9k_sig_p229r", "fas2_dv2", "m9k_intervention"},
+	weapons = {"fas2_dv2", "m9k_intervention"},
 	command = "hitman",
 	max = 1,
-	salary = 60,
+	salary = 1,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -402,7 +334,7 @@ TEAM_SWAT = AddExtraTeam("Military Infantry", {
 		warrant for his/her arrest.
 		Type /wanted <name> to alert the public to this criminal
 		Type /jailpos to set the Jail Position]],
-	weapons = {"arrest_stick", "unarrest_stick", "fas2_glock20", "stunstick", "door_ram", "weaponchecker", "fas2_mp5sd6"},
+	weapons = {"arrest_stick", "unarrest_stick", "fas2_glock20", "stunstick", "door_ram", "weaponchecker", "fas2_m4a1"},
 	command = "swat",
 	max = 4,
 	salary = 60,
@@ -431,7 +363,7 @@ TEAM_SWATLEADER = AddExtraTeam("Military Commander", {
 		warrant for his/her arrest.
 		Type /wanted <name> to alert the public to this criminal
 		Type /jailpos to set the Jail Position]],
-	weapons = {"fas2_deagle", "arrest_stick", "unarrest_stick", "stunstick", "door_ram", "weaponchecker", "fas2_rem870", "fas2_ak12"},
+	weapons = {"fas2_deagle", "arrest_stick", "unarrest_stick", "stunstick", "door_ram", "weaponchecker", "fas2_rem870", "fas2_g36c"},
 	command = "swatleader",
 	max = 1,
 	salary = 100,
@@ -539,7 +471,7 @@ TEAM_ENGINEER = AddExtraTeam("Engineer", {
 	weapons = {"weapon_crowbar"},
 	command = "engineer",
 	max = 3,
-	salary = 60,
+	salary = 1,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -576,7 +508,7 @@ TEAM_PGUARD = AddExtraTeam("Personal Guard", {
 	weapons = {"m9k_m92beretta"},
 	command = "pguard",
 	max = 2,
-	salary = 40,
+	salary = 1,
 	admin = 0,
 	vote = true,
 	hasLicense = true,
@@ -595,7 +527,7 @@ TEAM_BMDEALER = AddExtraTeam("Black Market Dealer", {
 	weapons = {},
 	command = "BMD",
 	max = 2,
-	salary = 80,
+	salary = 1,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -608,11 +540,13 @@ TEAM_BMDEALER = AddExtraTeam("Black Market Dealer", {
 TEAM_THIEF = AddExtraTeam("Thief", {
 	color = Color(25, 25, 25, 255),
 	model = "models/player/arctic.mdl",
-	description = [[Steal, mug people is your priority]],
-	weapons = {"lockpick", "keypad_cracker"},
+	description = [[Steal, mug people is your priority
+		But first you need to buy some tools of the
+		Black Market Dealer to start your career]],
+	weapons = {"lockpick"},
 	command = "thief",
 	max = 3,
-	salary = 45,
+	salary = 1,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -629,7 +563,7 @@ TEAM_PROTHIEF = AddExtraTeam("Professional Thief", {
 	weapons = {"pro_lockpick", "prokeypad_cracker"},
 	command = "prothief",
 	max = 4,
-	salary = 90,
+	salary = 1,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -649,7 +583,7 @@ TEAM_ADVGUN = AddExtraTeam("Military Arms Dealer", {
 	weapons = {"fas2_ammobox"},
 	command = "advgun",
 	max = 2,
-	salary = 45,
+	salary = 1,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -666,7 +600,7 @@ TEAM_ASSASSIN = AddExtraTeam("Assassin", {
 	weapons = {"weapon_crossbow", "blink_swep", "climb_swep2", "fas2_dv2", "vortigaunt_beam"},
 	command = "Assassin",
 	max = 5,
-	salary = 160,
+	salary = 1,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -689,7 +623,7 @@ TEAM_STEAMPILOT = AddExtraTeam("Steampunk Pilot", {
 	weapons = {"arrest_stick", "unarrest_stick", "weapon_357", "weapon_ar2", "stunstick", "door_ram"},
 	command = "steampilot",
 	max = 3,
-	salary = 120,
+	salary = 1,
 	admin = 0,
 	vote = false,
 	hasLicense = true,
@@ -711,7 +645,7 @@ TEAM_RUSSIANGUN = AddExtraTeam("Russian Arms Dealer", {
 	weapons = {},
 	command = "russiangundealer",
 	max = 2,
-	salary = 45,
+	salary = 1,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
